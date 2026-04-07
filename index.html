@@ -13,7 +13,765 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
+:root {<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dra. Kátia Savelli | Acupuntura, Craniossacral e Sono em Brusque/SC</title>
+<meta name="description" content="Dra. Kátia Savelli Gomes. Terapias Integrativas: Acupuntura, Craniossacral, Tratamento do Sono e Ortomolecular. Mais de 30 anos de experiência. Brusque/SC. Agendamento pelo WhatsApp."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23c4956a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='28' font-weight='400' fill='%23faf6f1' text-anchor='middle'%3EKS%3C/text%3E%3C/svg%3E"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
+  --bg:       #faf6f1;
+  --bg2:      #f2ebe0;
+  --bg3:      #e8ddd0;
+  --ink:      #2c2118;
+  --ink2:     #6b5a49;
+  --ink3:     #a08878;
+  --terra:    #c4956a;
+  --terra2:   #a87950;
+  --sage:     #7a9080;
+  --sage2:    #5d7268;
+  --cream:    #faf6f1;
+  --border:   rgba(44,33,24,.1);
+  --white:    #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6vw; height: 66px;
+  background: rgba(250,246,241,.94);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; font-weight: 500;
+  color: var(--ink); text-decoration: none;
+  letter-spacing: .02em;
+}
+.nav-logo span { color: var(--terra); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-size: .72rem; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--ink2); text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover { color: var(--terra); }
+.nav-cta {
+  font-size: .72rem; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: .5rem 1.3rem;
+  border: 1px solid var(--terra); color: var(--terra);
+  text-decoration: none; border-radius: 50px;
+  transition: all .2s; background: transparent;
+  cursor: pointer; font-family: 'Jost', sans-serif;
+}
+.nav-cta:hover { background: var(--terra); color: var(--white); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: .3rem; }
+.nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: .3s; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 66px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(196,149,106,.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-content {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 5rem 5vw 5rem 8vw;
+  position: relative; z-index: 1;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-size: .68rem; font-weight: 500; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--terra);
+  margin-bottom: 1.6rem;
+}
+.hero-tag::before {
+  content: '';
+  display: block; width: 30px; height: 1px; background: var(--terra);
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 4vw, 4rem);
+  font-weight: 400; line-height: 1.15;
+  color: var(--ink); margin-bottom: 1.5rem;
+}
+.hero-title em { font-style: italic; color: var(--terra); }
+.hero-subtitle {
+  font-size: .95rem; font-weight: 300;
+  color: var(--ink2); line-height: 1.8;
+  max-width: 400px; margin-bottom: 2.5rem;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .82rem 1.8rem;
+  background: var(--terra); color: var(--white);
+  text-decoration: none; font-size: .78rem; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  border-radius: 50px; border: 1px solid var(--terra);
+  transition: all .25s; cursor: pointer; font-family: 'Jost', sans-serif;
+}
+.btn-primary:hover { background: var(--terra2); border-color: var(--terra2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,149,106,.3); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .82rem 1.8rem;
+  background: transparent; color: var(--ink);
+  text-decoration: none; font-size: .78rem; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  border-radius: 50px; border: 1px solid var(--border);
+  transition: all .25s;
+}
+.btn-secondary:hover { border-color: var(--ink2); }
+.hero-badges {
+  display: flex; gap: 1.5rem; margin-top: 3rem;
+  padding-top: 2.5rem; border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.badge {
+  display: flex; align-items: center; gap: .5rem;
+  font-size: .72rem; font-weight: 400; color: var(--ink3);
+}
+.badge svg { color: var(--terra); flex-shrink: 0; }
+
+.hero-image {
+  position: relative; overflow: hidden; background: var(--bg2);
+}
+.hero-image img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center; display: block;
+}
+.hero-image-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, var(--bg) 0%, transparent 20%);
+}
+.hero-card {
+  position: absolute; bottom: 2rem; left: 2rem; right: 2rem;
+  background: rgba(250,246,241,.96);
+  border: 1px solid var(--border);
+  padding: 1.1rem 1.3rem; border-radius: 8px;
+}
+.hero-card p {
+  font-size: .72rem; letter-spacing: .06em;
+  color: var(--ink2); font-weight: 300; line-height: 1.6;
+}
+.hero-card strong { color: var(--terra); font-weight: 500; }
+
+/* ── SECTION BASE ── */
+section { padding: 6rem 8vw; }
+.section-label {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .68rem; font-weight: 500; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--terra); margin-bottom: 1rem;
+}
+.section-label::before {
+  content: ''; display: block;
+  width: 20px; height: 1px; background: var(--terra);
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+  font-weight: 400; line-height: 1.2; color: var(--ink);
+}
+.section-title em { font-style: italic; color: var(--terra); }
+
+/* ── SOBRE ── */
+.about {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center;
+  background: var(--white);
+}
+.about-image { position: relative; }
+.about-image img {
+  width: 100%; aspect-ratio: 4/5;
+  object-fit: cover; object-fit: top; border-radius: 4px; display: block;
+}
+.about-accent {
+  position: absolute; top: -1.2rem; right: -1.2rem;
+  bottom: 1.2rem; left: 1.2rem;
+  border: 1.5px solid var(--terra); border-radius: 4px;
+  opacity: .4; z-index: -1;
+}
+.about-text {
+  font-size: .92rem; font-weight: 300; color: var(--ink2);
+  line-height: 1.85; margin: 1.4rem 0;
+}
+.about-creds {
+  display: flex; flex-direction: column; gap: .6rem; margin-top: 1.8rem;
+}
+.cred {
+  display: flex; align-items: flex-start; gap: .7rem;
+  font-size: .8rem; font-weight: 300; color: var(--ink2); line-height: 1.5;
+}
+.cred-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--terra); flex-shrink: 0; margin-top: .45rem;
+}
+
+/* ── TRATAMENTOS ── */
+.tratamentos { background: var(--bg); }
+.tratamentos-intro {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  align-items: end; margin-bottom: 4rem;
+}
+.tratamentos-intro p {
+  font-size: .92rem; font-weight: 300; color: var(--ink2); line-height: 1.8;
+}
+.tratamentos-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
+  background: var(--border); border: 1px solid var(--border);
+}
+.tratamento-card {
+  background: var(--bg); padding: 2.2rem;
+  transition: background .2s;
+  display: flex; flex-direction: column; gap: .8rem;
+}
+.tratamento-card:hover { background: var(--white); }
+.trat-icon {
+  width: 40px; height: 40px; color: var(--terra);
+}
+.trat-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem; font-weight: 400; color: var(--ink);
+}
+.trat-text {
+  font-size: .8rem; font-weight: 300; color: var(--ink2); line-height: 1.7;
+}
+
+/* ── SONO ── */
+.sono {
+  background: var(--ink);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+}
+.sono .section-label { color: rgba(196,149,106,.9); }
+.sono .section-label::before { background: rgba(196,149,106,.9); }
+.sono .section-title { color: var(--white); }
+.sono-text {
+  font-size: .9rem; font-weight: 300;
+  color: rgba(255,255,255,.55); line-height: 1.85; margin: 1.4rem 0 2rem;
+}
+.sono-items { display: flex; flex-direction: column; gap: 1rem; }
+.sono-item {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.1rem 1.3rem;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 6px; background: rgba(255,255,255,.03);
+}
+.sono-item-icon { color: var(--terra); flex-shrink: 0; margin-top: .1rem; }
+.sono-item-title {
+  font-size: .82rem; font-weight: 500; color: var(--white);
+  margin-bottom: .2rem;
+}
+.sono-item-text {
+  font-size: .75rem; font-weight: 300;
+  color: rgba(255,255,255,.45); line-height: 1.6;
+}
+.sono-alert {
+  background: rgba(196,149,106,.12);
+  border: 1px solid rgba(196,149,106,.3);
+  border-radius: 8px; padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.sono-alert p {
+  font-size: .85rem; font-weight: 300;
+  color: rgba(255,255,255,.7); line-height: 1.75;
+}
+.sono-alert strong { color: var(--terra); font-weight: 500; }
+
+/* ── DEPOIMENTOS ── */
+.depoimentos { background: var(--bg2); }
+.dep-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 1.5rem; margin-top: 3rem;
+}
+.dep-card {
+  background: var(--white); padding: 2rem;
+  border-radius: 4px; border: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  transition: transform .2s, box-shadow .2s;
+}
+.dep-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(44,33,24,.07); }
+.dep-stars { color: var(--terra); font-size: .85rem; margin-bottom: .6rem; }
+.dep-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem; line-height: .8; color: var(--terra); margin-bottom: .6rem;
+}
+.dep-text {
+  font-size: .85rem; font-weight: 300; color: var(--ink2);
+  line-height: 1.75; font-style: italic; flex: 1;
+}
+.dep-author {
+  display: flex; align-items: center; gap: .5rem;
+  margin-top: 1.3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+}
+.dep-author-line { width: 20px; height: 1px; background: var(--terra); flex-shrink: 0; }
+.dep-author-name {
+  font-size: .72rem; font-weight: 500; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink3);
+}
+
+/* ── AGENDAMENTO ── */
+.agendamento {
+  background: var(--terra);
+  text-align: center; padding: 5rem 8vw;
+}
+.agendamento h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400; color: var(--white);
+  line-height: 1.2; margin-bottom: 1rem;
+}
+.agendamento p {
+  font-size: .92rem; font-weight: 300;
+  color: rgba(255,255,255,.8); max-width: 480px;
+  margin: 0 auto 2.5rem; line-height: 1.75;
+}
+.btn-white {
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .9rem 2.2rem; background: var(--white);
+  color: var(--terra); text-decoration: none;
+  font-size: .78rem; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  border-radius: 50px; transition: all .25s;
+  font-family: 'Jost', sans-serif; border: none; cursor: pointer;
+}
+.btn-white:hover { background: var(--ink); color: var(--white); }
+
+/* ── CONTATO ── */
+.contato {
+  background: var(--white);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+}
+.contato-info .section-title { margin-bottom: 1.5rem; }
+.contato-text {
+  font-size: .88rem; font-weight: 300; color: var(--ink2);
+  line-height: 1.8; margin-bottom: 2rem;
+}
+.contato-detail {
+  display: flex; align-items: flex-start; gap: .9rem;
+  padding: .9rem 0; border-bottom: 1px solid var(--border);
+}
+.contato-detail:last-of-type { border-bottom: none; }
+.contato-detail svg { color: var(--terra); flex-shrink: 0; margin-top: 2px; }
+.contato-detail-label {
+  font-size: .65rem; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink3); display: block; margin-bottom: .2rem;
+}
+.contato-detail-value {
+  font-size: .85rem; font-weight: 400; color: var(--ink);
+}
+.mapa-box {
+  border-radius: 8px; overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 4/3; background: var(--bg2);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem; text-align: center; padding: 2rem;
+}
+.mapa-box svg { color: var(--terra); opacity: .5; }
+.mapa-box p { font-size: .82rem; color: var(--ink3); font-weight: 300; line-height: 1.6; }
+.mapa-box a {
+  font-size: .75rem; font-weight: 500;
+  color: var(--terra); text-decoration: none;
+  letter-spacing: .08em; text-transform: uppercase;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink); padding: 2.5rem 8vw;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: .95rem; font-weight: 400; color: var(--white);
+}
+.footer-logo span { color: var(--terra); }
+.footer-copy { font-size: .7rem; color: rgba(255,255,255,.3); font-weight: 300; }
+.footer-sano { font-size: .7rem; color: rgba(255,255,255,.25); font-weight: 300; }
+.footer-sano a { color: rgba(196,149,106,.7); text-decoration: none; }
+.footer-sano a:hover { color: var(--terra); }
+
+/* ── ANIMAÇÕES ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-content > * {
+  opacity: 0; animation: fadeUp .65s forwards;
+}
+.hero-content > *:nth-child(1) { animation-delay: .1s; }
+.hero-content > *:nth-child(2) { animation-delay: .25s; }
+.hero-content > *:nth-child(3) { animation-delay: .4s; }
+.hero-content > *:nth-child(4) { animation-delay: .55s; }
+.hero-content > *:nth-child(5) { animation-delay: .7s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-image { display: none; }
+  .hero-content { padding: 5rem 6vw 4rem; }
+  .about { grid-template-columns: 1fr; gap: 3rem; }
+  .about-image { max-width: 340px; margin: 0 auto; }
+  .tratamentos-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+  .tratamentos-grid { grid-template-columns: 1fr; }
+  .sono { grid-template-columns: 1fr; gap: 3rem; }
+  .contato { grid-template-columns: 1fr; gap: 3rem; }
+  footer { flex-direction: column; align-items: flex-start; gap: .5rem; }
+}
+@media (max-width: 600px) {
+  section { padding: 4rem 6vw; }
+  .tratamentos-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Dra. Kátia <span>Savelli</span></a>
+  <ul class="nav-links">
+    <li><a href="#tratamentos">Tratamentos</a></li>
+    <li><a href="#sono">Sono</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="https://wa.me/5547988930318?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="nav-cta" target="_blank">Agendar</a>
+  <button class="nav-hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-tag">Terapias Integrativas</div>
+    <h1 class="hero-title">
+      Tratando a causa,<br/>não apenas<br/><em>os sintomas.</em>
+    </h1>
+    <p class="hero-subtitle">
+      Acupuntura, Craniossacral e Ortomolecular para restaurar o equilíbrio do seu corpo. Atendimento com hora marcada em Brusque/SC.
+    </p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5547988930318?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="btn-primary" target="_blank">
+        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a href="#tratamentos" class="btn-secondary">Ver tratamentos</a>
+    </div>
+    <div class="hero-badges">
+      <div class="badge">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        +30 anos de experiência
+      </div>
+      <div class="badge">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Especialista em Sono
+      </div>
+      <div class="badge">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        CRO/SC 18816
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://i.ibb.co/N2WFHmN1/image.png" alt="Consultório Dra. Kátia Savelli"/>
+    <div class="hero-image-overlay"></div>
+    <div class="hero-card">
+      <p><strong>Espaço Pró Sanum</strong> — Rua Adriano Schaefer, 186, 2º andar<br/>Brusque, Santa Catarina</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="about-image">
+    <img src="https://i.ibb.co/ksG8pLvy/658823199-18159919066433952-2138480855819334220-n.jpg" alt="Dra. Kátia Savelli Gomes"/>
+    <div class="about-accent"></div>
+  </div>
+  <div class="about-content">
+    <div class="section-label">Sobre</div>
+    <h2 class="section-title">Dra. Kátia <em>Savelli Gomes</em></h2>
+    <p class="about-text">
+      Formada em Odontologia há mais de 30 anos, com especialização em Acupuntura bacharelada na Inglaterra e vasta experiência em Terapias Integrativas. Atuo no tratamento das causas reais dos seus sintomas, não apenas no alívio momentâneo.
+    </p>
+    <p class="about-text" style="margin-top:-.8rem">
+      Credenciada pela BIOLOGIX para exame de sono domiciliar em Brusque e palestrante sobre crescimento facial e respiração bucal.
+    </p>
+    <div class="about-creds">
+      <div class="cred"><div class="cred-dot"></div>Formada em Odontologia — CRO/SC 18816</div>
+      <div class="cred"><div class="cred-dot"></div>Especialista em Acupuntura — Bacharelada na Inglaterra</div>
+      <div class="cred"><div class="cred-dot"></div>Especialista em Doenças do Sono</div>
+      <div class="cred"><div class="cred-dot"></div>Credenciada BIOLOGIX — Polissonografia domiciliar</div>
+      <div class="cred"><div class="cred-dot"></div>Cursos no Brasil e no exterior</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRATAMENTOS -->
+<section class="tratamentos" id="tratamentos">
+  <div class="tratamentos-intro">
+    <div>
+      <div class="section-label">Tratamentos</div>
+      <h2 class="section-title">Terapias que <em>restauram</em></h2>
+    </div>
+    <p>Cada tratamento é escolhido e personalizado para a sua condição. O objetivo é sempre restaurar o equilíbrio natural do organismo, atuando na raiz do problema.</p>
+  </div>
+  <div class="tratamentos-grid">
+    <div class="tratamento-card">
+      <svg class="trat-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+      </svg>
+      <div class="trat-title">Acupuntura</div>
+      <p class="trat-text">Técnica milenar que atua na circulação do fluxo de energia vital. Eficaz no tratamento de dores crônicas e agudas, ansiedade, depressão e no restabelecimento do fluxo respiratório.</p>
+    </div>
+    <div class="tratamento-card">
+      <svg class="trat-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z"/>
+      </svg>
+      <div class="trat-title">Terapia Craniossacral</div>
+      <p class="trat-text">Terapia manual extremamente sutil que atua na liberação das fáscias e do líquido cerebral, trabalhando nos ossos cranianos, coluna vertebral, sacro e cóccix. Restaura o funcionamento global do organismo.</p>
+    </div>
+    <div class="tratamento-card">
+      <svg class="trat-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>
+      </svg>
+      <div class="trat-title">Tratamento do Sono</div>
+      <p class="trat-text">Diagnóstico com polissonografia domiciliar e tratamento do ronco, apneia e distúrbios do sono com Aparelho RFA e terapias complementares. Melhora o sono e a qualidade de vida.</p>
+    </div>
+    <div class="tratamento-card">
+      <svg class="trat-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+      </svg>
+      <div class="trat-title">Ortomolecular</div>
+      <p class="trat-text">Tratamento baseado no equilíbrio nutricional e molecular do organismo para prevenção e tratamento de doenças, com foco no bem-estar integral e na longevidade saudável.</p>
+    </div>
+    <div class="tratamento-card">
+      <svg class="trat-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z"/>
+      </svg>
+      <div class="trat-title">Posturologia</div>
+      <p class="trat-text">Avaliação e tratamento da relação entre a postura corporal e as dores crônicas. Atua nos sistemas de tono-regulação postural para corrigir desequilíbrios e aliviar tensões persistentes.</p>
+    </div>
+    <div class="tratamento-card">
+      <svg class="trat-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/>
+      </svg>
+      <div class="trat-title">DTM e Bruxismo</div>
+      <p class="trat-text">Tratamento das disfunções temporomandibulares, bruxismo e zumbido com abordagem integrativa, aliviando a dor e protegendo a articulação e os dentes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SONO -->
+<section class="sono" id="sono">
+  <div>
+    <div class="section-label">Distúrbios do Sono</div>
+    <h2 class="section-title" style="color:#fff">Você ronca e tem <em style="color:var(--terra)">paradas respiratórias?</em></h2>
+    <p class="sono-text">O ronco excessivo e as paradas respiratórias durante o sono podem levar a sérios problemas de saúde: risco cardiovascular, hipertensão, diabetes, impotência e perda de memória. Tenho mais de 30 anos de experiência no tratamento dessas condições.</p>
+    <a href="https://wa.me/5547988930318?text=Olá%2C%20vim%20pelo%20site.%20Tenho%20problemas%20com%20sono%20e%20gostaria%20de%20agendar%20uma%20avaliação" class="btn-primary" target="_blank">
+      <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar avaliação do sono
+    </a>
+  </div>
+  <div>
+    <div class="sono-alert">
+      <p><strong>Sabia que:</strong> ronco excessivo e apneia do sono aumentam em até 3x o risco de infarto e AVC. O diagnóstico é simples e pode ser feito em casa.</p>
+    </div>
+    <div class="sono-items">
+      <div class="sono-item">
+        <svg class="sono-item-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+        </svg>
+        <div>
+          <div class="sono-item-title">Polissonografia Domiciliar</div>
+          <p class="sono-item-text">Exame diagnóstico do sono realizado em casa com apenas um celular e sensor compacto sem fios. Simples, preciso e confortável.</p>
+        </div>
+      </div>
+      <div class="sono-item">
+        <svg class="sono-item-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/>
+        </svg>
+        <div>
+          <div class="sono-item-title">Aparelho RFA</div>
+          <p class="sono-item-text">Dispositivo intraoral que reposiciona a mandíbula durante o sono, reduzindo o ronco e as paradas respiratórias de forma eficaz e não invasiva.</p>
+        </div>
+      </div>
+      <div class="sono-item">
+        <svg class="sono-item-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+        </svg>
+        <div>
+          <div class="sono-item-title">Acupuntura para o Sono</div>
+          <p class="sono-item-text">Protocolo específico de acupuntura para restabelecimento do fluxo respiratório e melhora da qualidade do sono.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos" id="depoimentos">
+  <div class="section-label">Depoimentos</div>
+  <h2 class="section-title">O que meus <em>pacientes dizem</em></h2>
+  <div class="dep-grid">
+    <div class="dep-card">
+      <div class="dep-stars">★★★★★</div>
+      <div class="dep-quote">"</div>
+      <p class="dep-text">Estou há 1 mês em tratamento com o uso do aparelho RFA com a Dra. Kátia Savelli Gomes e já sinto mudanças significativas. A musculatura ao redor da boca mais elástica, minha assimetria no rosto diminuindo e a dor no ombro reduziu muito.</p>
+      <div class="dep-author">
+        <div class="dep-author-line"></div>
+        <span class="dep-author-name">Rosana Nair de Souza &nbsp;·&nbsp; Tratamento RFA</span>
+      </div>
+    </div>
+    <div class="dep-card">
+      <div class="dep-stars">★★★★★</div>
+      <div class="dep-quote">"</div>
+      <p class="dep-text">A Dra. Kátia é muito atenciosa e cuidadosa. Comecei o tratamento de acupuntura para dores crônicas e a melhora foi progressiva e real. Me sinto muito mais disposta e sem as dores que me limitavam há anos.</p>
+      <div class="dep-author">
+        <div class="dep-author-line"></div>
+        <span class="dep-author-name">Maria C. &nbsp;·&nbsp; Acupuntura</span>
+      </div>
+    </div>
+    <div class="dep-card">
+      <div class="dep-stars">★★★★★</div>
+      <div class="dep-quote">"</div>
+      <p class="dep-text">Procurei a Dra. Kátia por problemas de sono e ronco. Ela identificou a causa, fiz o exame domiciliar e o tratamento mudou minha vida. Durmo muito melhor, tenho mais energia e minha família também agradece!</p>
+      <div class="dep-author">
+        <div class="dep-author-line"></div>
+        <span class="dep-author-name">Carlos M. &nbsp;·&nbsp; Tratamento do Sono</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDAMENTO CTA -->
+<div class="agendamento">
+  <h2>Cuide da sua saúde<br/>como ela merece.</h2>
+  <p>Agende sua avaliação com hora marcada. Atendimento personalizado, ambiente tranquilo e os melhores tratamentos integrativas disponíveis em Brusque.</p>
+  <a href="https://wa.me/5547988930318?text=Olá%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" class="btn-white" target="_blank">
+    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Agendar pelo WhatsApp
+  </a>
+</div>
+
+<!-- CONTATO -->
+<section class="contato" id="contato">
+  <div class="contato-info">
+    <div class="section-label">Contato</div>
+    <h2 class="section-title">Fale <em>comigo</em></h2>
+    <p class="contato-text">Atendimento com hora marcada. Entre em contato pelo WhatsApp para agendar sua avaliação.</p>
+    <div class="contato-detail">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+      <div>
+        <span class="contato-detail-label">WhatsApp</span>
+        <span class="contato-detail-value">47 98893-0318</span>
+      </div>
+    </div>
+    <div class="contato-detail">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+      <div>
+        <span class="contato-detail-label">Endereço</span>
+        <span class="contato-detail-value">Rua Adriano Schaefer, 186 — 2º andar<br/>Espaço Pró Sanum, Brusque/SC</span>
+      </div>
+    </div>
+    <div class="contato-detail">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <div>
+        <span class="contato-detail-label">Atendimento</span>
+        <span class="contato-detail-value">Com hora marcada — via WhatsApp</span>
+      </div>
+    </div>
+    <div class="contato-detail">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <div>
+        <span class="contato-detail-label">Registro</span>
+        <span class="contato-detail-value">CRO/SC 18816</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:.8rem;margin-top:1.5rem">
+      <a href="https://www.instagram.com/katiasavelligomes" class="nav-cta" target="_blank" style="font-size:.7rem">Instagram</a>
+    </div>
+  </div>
+  <div class="mapa-box">
+    <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+    </svg>
+    <p><strong style="color:var(--ink);font-weight:500">Espaço Pró Sanum</strong><br/>Rua Adriano Schaefer, 186, 2º andar<br/>Brusque, Santa Catarina — 88350-330</p>
+    <a href="https://maps.google.com/?q=Rua+Adriano+Schaefer+186+Brusque+SC" target="_blank">Ver no Google Maps</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Dra. Kátia <span>Savelli</span></div>
+  <div class="footer-copy">© 2026 Dra. Kátia Savelli Gomes. Todos os direitos reservados.</div>
+  <div class="footer-sano">Desenvolvido por <a href="https://sanolab.com.br" target="_blank">Sano Lab</a></div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const links = document.querySelector('.nav-links');
+  const cta = document.querySelector('.nav-cta');
+  if (links.style.display === 'flex') {
+    links.style.display = 'none';
+    cta.style.display = 'none';
+  } else {
+    links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:66px;left:0;right:0;background:rgba(250,246,241,.98);padding:2rem;gap:1.5rem;border-bottom:1px solid rgba(44,33,24,.1);z-index:99';
+    cta.style.cssText = 'display:block;margin:0 2rem 2rem;text-align:center;';
+  }
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.tratamento-card, .dep-card, .sono-item, .cred').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(18px)';
+  el.style.transition = 'opacity .5s ease, transform .5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
+
   --rose:    #f5e6df;
   --rose2:   #eeddd6;
   --rose3:   #e8c5b8;
